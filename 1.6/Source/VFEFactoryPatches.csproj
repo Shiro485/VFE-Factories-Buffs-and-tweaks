@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>VFEFactoryBuffsNTweaks</AssemblyName>
+    <RootNamespace>VFEFactoryBuffsNTweaks</RootNamespace>
+    <TargetFramework>net472</TargetFramework>
+    <Nullable>disable</Nullable>
+    <LangVersion>9</LangVersion>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RimWorldPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed</RimWorldPath>
+    <HarmonyPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\1.5\Assemblies</HarmonyPath>
+    <VFEFactoryPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3686924415\1.6\Assemblies</VFEFactoryPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldPath)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(RimWorldPath)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <Reference Include="0Harmony">
+      <HintPath>$(HarmonyPath)\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <Reference Include="VanillaFurnitureExpandedFactory">
+      <HintPath>$(VFEFactoryPath)\VanillaFurnitureExpandedFactory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuildMessage" AfterTargets="Build">
+    <Message
+      Text="✔ VFEFactoryBuffsNTweaks.dll written to $(OutputPath)"
+      Importance="high" />
+  </Target>
+
+</Project>
