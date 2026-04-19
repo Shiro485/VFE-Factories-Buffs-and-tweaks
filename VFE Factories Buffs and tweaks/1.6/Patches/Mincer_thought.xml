@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Patch>
-	<!-- Remove the butchered human thought from the mincer because there is no reason for it to exist in the first place when pawns can happily feed corpses to pigs. Yes, this one irrationally pissed me off -->
-	
-	<Operation Class="PatchOperationRemove">
-        <xpath>Defs/PipeSystem.ProcessDef[defName="VFEFactory_MinceHumanCorpses"]/historyEventWhenFinished</xpath>
-    </Operation>
-	
-</Patch>
